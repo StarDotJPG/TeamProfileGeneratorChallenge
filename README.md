@@ -1,3 +1,0 @@
-# TeamProfileGeneratorChallenge
-
-test
