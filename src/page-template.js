@@ -64,7 +64,7 @@ module.exports = employees => {
                                     </div>
                                 </header>
                                 <main class="w-75 mx-auto">
-                                    <div class="card-deck justify-content-center">
+                                    <div class="card-deck card-columns justify-content-center">
                                         ${generateTeamCards(employees)}
                                     </div>
                                 </main>
