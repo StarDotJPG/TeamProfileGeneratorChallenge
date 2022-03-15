@@ -12,13 +12,26 @@ const generateRoleSpecificInfo = employee => {
     }
 };
 
+const generateRoleIcon = employee => {
+    // generate the role-specific data points using only the current object
+    if (employee.role == 'Engineer') {
+        return `<i class="fas fa-glasses"></i> `;
+    }
+    if (employee.role == 'Intern') {
+        return `<i class="fas fa-user-graduate"></i> `;
+    }
+    if (employee.role == 'Manager') {
+        return `<i class="fas fa-mug-hot"></i> `
+    }
+}
+
 const generateTeamCards = employees => {
     return `${employees.map(employee => {
         return `<div class="col-sm-3">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-header bg-primary text-white font-weight-bold">
                             <h3>${employee.name}</h3>
-                            <h4>${employee.role}</h4>
+                            <h4>${generateRoleIcon(employee)}${employee.role}</h4>
                         </div>
                         <div class="card-body bg-secondary">
                             <p class="card-text bg-light p-3 mb-2 rounded">Employee ID: ${employee.id}</p>
@@ -42,6 +55,7 @@ module.exports = employees => {
                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
                             <title>Team Profile</title>
                             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
                             </head>
                             <body>
                                 <header>
