@@ -4,6 +4,8 @@ const fs = require('fs')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
+const generatePage = require('./src/page-template')
+const { writeFile, copyFile } = require('./src/generate-site.js');
 
 const promptEmployee = () => {
     return inquirer.prompt([
@@ -112,14 +114,14 @@ const promptEmployee = () => {
 function init() {
     promptEmployee()
         .then(employees => {
-            return console.log(employees)
-            //return generateMarkdown(data)
+            //return console.log(employees)
+            return generatePage(employees)
         })
-        .then(markdown => {
-            //return writeToFile("./dist/readme.md", markdown)
+        .then(pageHTML => {
+            return writeFile(pageHTML)
         })
         .then(writeFileResponse => {
-            //console.log(writeFileResponse)
+            console.log(writeFileResponse)
         })
 }
 
