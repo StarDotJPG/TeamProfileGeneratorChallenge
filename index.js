@@ -123,7 +123,7 @@ const promptEmployee = () => {
         })
     }
     // if the employees array already exists, don't ask for the manager
-    return inquirer.prompt([...nonManagerQuestions, ...commonQuestions, confirmQuestion])
+    return inquirer.prompt([...nonManagerQuestions, ...commonQuestions, ...confirmQuestion])
         .then(employeeData => {
             // add the employee data to the employees objects array
             if (employeeData.role == 'Engineer') {
