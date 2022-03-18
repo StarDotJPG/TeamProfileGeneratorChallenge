@@ -113,7 +113,7 @@ const nonManagerQuestions = [
 ]
 
 const promptEmployee = () => {
-    //If there's no 'employees' array, create one and ask for the manager (Like a Karen)
+    //If there's no 'employees' array, create one and ask for the manager
     if (typeof employees === 'undefined') {
         employees = [];
         return inquirer.prompt([...managerQuestions, ...commonQuestions])
@@ -146,7 +146,6 @@ const promptEmployee = () => {
 function init() {
     promptEmployee()
         .then(employees => {
-            //return console.log(employees)
             return generatePage(employees)
         })
         .then(pageHTML => {

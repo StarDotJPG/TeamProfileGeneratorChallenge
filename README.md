@@ -7,9 +7,10 @@ This application was written using test driven development and object-oriented d
 ## Built With
 * HTML
 * Bootstrap CSS
+* Font Awesome Icons
 * Node.js
 * [Inquirer module](https://www.npmjs.com/package/inquirer)
-* [JEST Unit Test Module ](https://www.npmjs.com/package/jest)
+* [JEST Unit Test module](https://www.npmjs.com/package/jest)
 
 ## Contribution
 Made with ❤️ by Jason Greenia
